@@ -174,7 +174,9 @@ namespace Warcraft.NET.Files
             {
                 while (ms.Position < ms.Length)
                 {
-                    var stringSig = new string(br.ReadChars(4).Reverse().ToArray());
+                    var charSig = br.ReadChars(4);
+                    Array.Reverse(charSig);
+                    var stringSig = new string(charSig);
                     
                     if(!chunkList.Contains(stringSig))
                         chunkList.Add(stringSig);
