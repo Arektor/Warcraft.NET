@@ -396,6 +396,25 @@ namespace Warcraft.NET.Extensions
 
             return Unsafe.ReadUnaligned<T>(ref result[0]);
         }
+        
+        
+        /// <summary>
+        /// Read a list of structs
+        /// </summary>
+        /// <param name="count">Count of structs to read</param>
+        /// <param name="offset">Offset to read from</param>
+        /// <param name="br">The reader.</param>
+        /// <typeparam name="T">Type of struct to read</typeparam>
+        public static List<T> ReadStructList<T>(this BinaryReader br, uint count, uint offset) where T : struct
+        {
+            br.BaseStream.Position = offset;
+            List<T> list = new List<T>();
+
+            for (var i = 0; i < count; i++)
+                list.Add(br.ReadStruct<T>());
+
+            return list;
+        }
         #endregion
 
         #region Write

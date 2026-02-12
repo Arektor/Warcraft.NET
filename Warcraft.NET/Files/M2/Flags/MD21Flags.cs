@@ -116,7 +116,11 @@ namespace Warcraft.NET.Files.M2.Flags
         /// <summary>
         /// Unknown Flag: apparently use 24500 upgraded model format: chunked .anim files, change in the exporter reordering sequence+bone blocks before name
         /// </summary>
-        Unknown200000 = 0x200000
+        Unknown200000 = 0x200000,
 
+        /// <summary>
+        /// Is a housing furniture model: Seen on 11.1.7+ player housing furniture models
+        /// </summary>
+        HousingFurnitrue = 0x40000000
     }
 }

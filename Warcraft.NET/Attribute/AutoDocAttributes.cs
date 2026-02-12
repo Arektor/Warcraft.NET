@@ -12,23 +12,26 @@ namespace Warcraft.NET.Attribute
         SL = 16,
         DF = 32,
         TWW = 64,
+        MD = 128,
     }
 
     internal static class AutoDocChunkVersionHelper
     {
-        internal const AutoDocChunkVersion VersionAll = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterLK = AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterWoD = AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterLegion = AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterBfA = AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterSL = AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
-        internal const AutoDocChunkVersion VersionAfterDF = AutoDocChunkVersion.TWW;
+        internal const AutoDocChunkVersion VersionAll = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterLK = AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterWoD = AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterLegion = AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterBfA = AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterSL = AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterDF = AutoDocChunkVersion.TWW | AutoDocChunkVersion.MD;
+        internal const AutoDocChunkVersion VersionAfterTWW = AutoDocChunkVersion.MD;
 
         internal const AutoDocChunkVersion VersionBeforeLegion = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD;
         internal const AutoDocChunkVersion VersionBeforeBfA = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion;
         internal const AutoDocChunkVersion VersionBeforeSL = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA;
         internal const AutoDocChunkVersion VersionBeforeDF = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL;
         internal const AutoDocChunkVersion VersionBeforeTWW = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF;
+        internal const AutoDocChunkVersion VersionBeforeMD = AutoDocChunkVersion.LK | AutoDocChunkVersion.WoD | AutoDocChunkVersion.Legion | AutoDocChunkVersion.BfA | AutoDocChunkVersion.SL | AutoDocChunkVersion.DF | AutoDocChunkVersion.TWW;
     }
 
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]

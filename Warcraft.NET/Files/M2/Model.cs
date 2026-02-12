@@ -4,6 +4,7 @@ using Warcraft.NET.Files.M2.Chunks.BfA;
 using Warcraft.NET.Files.M2.Chunks.DF;
 using Warcraft.NET.Files.M2.Chunks.Legion;
 using Warcraft.NET.Files.M2.Chunks.SL;
+using Warcraft.NET.Files.M2.Chunks.TWW;
 
 namespace Warcraft.NET.Files.M2
 {
@@ -171,6 +172,18 @@ namespace Warcraft.NET.Files.M2
         /// </summary>
         [ChunkOrder(27),ChunkOptional]
         public AFRA AFRA { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PCOL
+        /// </summary>
+        [ChunkOrder(28), ChunkOptional]
+        public PCOL PCOL { get; set; }
+
+        /// <summary>
+        /// Gets or sets the DPIV
+        /// </summary>
+        [ChunkOrder(29), ChunkOptional]
+        public DPIV DPIV { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Model"/> class.
