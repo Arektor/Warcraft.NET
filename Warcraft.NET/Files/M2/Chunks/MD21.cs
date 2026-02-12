@@ -186,7 +186,7 @@ namespace Warcraft.NET.Files.M2.Chunks
                 TextureLookup = ReadStructList<TextureLookupStruct>(nTexLookup, ofsTexLookup, br);
                 TransparencyLookup = ReadStructList<TransparencyLookupStruct>(nTransLookup, ofsTranslookup, br);
                 UVAnimLookup = ReadStructList<UVAnimLookupStruct>(nUVAnimLookup, ofsUVAnimLookup, br);
-                BoundingTriangles = ReadStructList<BoundingTriangleStruct>(nBoundingTriangles, ofsBoundingTriangles, br);
+                BoundingTriangles = ReadStructList<BoundingTriangleStruct>(nBoundingTriangles/3, ofsBoundingTriangles, br);
                 BoundingVertices = ReadStructList<BoundingVertexStruct>(nBoundingVertices, ofsBoundingVertices, br);
                 BoundingNormals = ReadStructList<BoundingNormalStruct>(nBoundingNormals, ofsBoundingNormals, br);
                 Attachments = ReadStructList<AttachmentStruct>(nAttachments, ofsAttachments, br);
