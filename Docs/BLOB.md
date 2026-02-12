@@ -4,8 +4,8 @@ N/A = Not in this file for this expansion<br>
 **NYI** = Not Yet Implemented / TODO
 
 ### BLOB
-|Chunk|LK|WoD|Legion|BfA|SL|DF|TWW|
-|-----|-----|-----|-----|-----|-----|-----|-----|
-|MBVR|N/A|✔|✔|✔|✔|✔|✔|
-|MBBB|N/A|✔|✔|✔|✔|✔|✔|
+|Chunk|LK|WoD|Legion|BfA|SL|DF|TWW|MD|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|MBVR|N/A|✔|✔|✔|✔|✔|✔|✔|
+|MBBB|N/A|✔|✔|✔|✔|✔|✔|✔|
 
