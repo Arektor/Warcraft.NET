@@ -13,7 +13,7 @@ namespace Warcraft.NET.Tests.Files.ADT
         {
 #pragma warning disable SYSLIB0014
             using (var client = new WebClient())
-                return client.DownloadData($"{BASE_URL_CASC_API}/{fileId}?download&version={version}");
+                return client.DownloadData($"{BASE_URL_CASC_API}/{fileId}/?version={version}&download");
 #pragma warning restore SYSLIB0014
         }
     }

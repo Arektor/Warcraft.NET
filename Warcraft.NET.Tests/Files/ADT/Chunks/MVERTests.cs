@@ -8,7 +8,7 @@ namespace Warcraft.NET.Tests.Files.ADT.Chunks
     [TestClass]
     public class MVERTests
     {
-        protected byte[] adt = TestResource.Download(820891, "9.2.7.45746");
+        protected byte[] adt = TestResource.Download(820891, "8.1.5.29558");
 
         [TestMethod]
         public void LoadBinaryData()
