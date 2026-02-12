@@ -8,6 +8,8 @@ Warcraft.NET is an open source C# library that can read and write most of the Wo
 - Legion (7.x.x)
 - Battle for Azeroth (8.x.x)
 - Shadowlands (9.2.x)
+- The War Within (11.2.x)
+- Midnight (12.x.x)
 
 ## Status
 We support most of the World of Warcraft binary formats. Check out the link's below for a detailed view on chunk level.
@@ -20,7 +22,7 @@ We support most of the World of Warcraft binary formats. Check out the link's be
 - [BLOB](Docs/BLOB.md)
 
 ## Projects
-- [MapUpconverter](https://github.com/ModernWoWTools/MapUpconverter) - Converts 3.3.5 ADTs to 8.2.x+ ADTs 
+- [MapUpconverter](https://github.com/ModernWoWTools/MapUpconverter) - Converts 3.3.5 ADTs to 7.3.5, 8.3.x, 9.2.x or newer ADTs
 - [ADTMeta](https://github.com/ModernWoWTools/ADTMeta) - A project to create World of Warcraft ADT based meta information 
 
 ## Licensing
@@ -34,3 +36,5 @@ The use of the GPLv3 license and not the LGPLv3 license is a conscious choice by
 Special thanks to:
 - [wowdev.wiki](https://wowdev.wiki/)
 - [libwarcraft](https://github.com/WowDevTools/libwarcraft)
+
+
