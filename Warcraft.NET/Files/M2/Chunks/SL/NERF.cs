@@ -4,7 +4,7 @@ using System.Numerics;
 using Warcraft.NET.Attribute;
 using Warcraft.NET.Files.Interfaces;
 
-namespace Warcraft.NET.Files.M2.Chunks.Legion
+namespace Warcraft.NET.Files.M2.Chunks.SL
 {
     [AutoDocChunk(AutoDocChunkVersionHelper.VersionAfterBfA, AutoDocChunkVersionHelper.VersionBeforeSL)]
     public class NERF : IIFFChunk, IBinarySerializable
