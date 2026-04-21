@@ -101,6 +101,14 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                     ms.Seek(Header.AlphaMapsOffset + headerAndSizeOffset, SeekOrigin.Begin);
                     AlphaMaps = br.ReadIFFChunk<MCAL>(false, false);
                 }
+
+                // Read MCSE
+                if (Header.SoundEmittersOffset > 0)
+                {
+                    ms.Seek(Header.SoundEmittersOffset + headerAndSizeOffset, SeekOrigin.Begin);
+                    SoundEmitters = br.ReadIFFChunk<MCSE>(false, false);
+                    Header.SoundEmitterCount = SoundEmitters.GetSize() / 28; // Every MCSE entry is 28 bytes in size.
+                }
             }
         }
 
@@ -202,7 +210,7 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                 if (SoundEmitters != null)
                 {
                     newHeader.SoundEmittersOffset = (uint)ms.Position + headerAndSizeOffset;
-                    newHeader.SoundEmitterCount = 0;
+                    newHeader.SoundEmitterCount = SoundEmitters.GetSize() / 28; // Every MCSE entry is 28 bytes in size.
                     bw.WriteIFFChunk(SoundEmitters);
                 }
 
