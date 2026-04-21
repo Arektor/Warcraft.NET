@@ -88,7 +88,7 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                 }
 
                 // Read MCSH
-                if (Header.BakedShadowsOffset > 0)
+                if (Header.BakedShadowsOffset > 0 && Header.Flags.HasFlag(MCNKFlags.HasBakedShadows))
                 {
                     ms.Seek(Header.BakedShadowsOffset + headerAndSizeOffset, SeekOrigin.Begin);
                     BakedShadows = br.ReadIFFChunk<MCSH>(false, false);
