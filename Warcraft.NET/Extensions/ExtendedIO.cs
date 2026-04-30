@@ -241,7 +241,7 @@ namespace Warcraft.NET.Extensions
         /// <typeparam name="T">The chunk type.</typeparam>
         /// <returns>The chunk.</returns>
         /// <summary>
-        public static T ReadIFFChunk<T>(this BinaryReader reader, bool returnDefault = false, bool fromBegin = true, bool reverseSignature = true) where T : IIFFChunk, new()
+        public static T ReadIFFChunk<T>(this BinaryReader reader, bool returnDefault = false, bool fromBegin = true, bool reverseSignature = true, uint forcedSize = 0) where T : IIFFChunk, new()
         {
             T chunk = new T();
 
@@ -261,6 +261,8 @@ namespace Warcraft.NET.Extensions
 
             string chunkSignature = reader.ReadBinarySignature(reverseSignature);
             var chunkSize = reader.ReadUInt32();
+            if (forcedSize > 0) // Necessary for reading MCAL subchunk in ADTs. The chunk size declared in the MCAL header can be wrong and is actually ignored, read from MCNK header instead
+                chunkSize = forcedSize; // An example of affected blizzard ADT is Northrend_30_22. MCAL subchunk sizes are declared 4, but sizeAlpha in MCNK headers have the correct values
             var chunkData = reader.ReadBytes((int)chunkSize);
 
             if (chunk.GetSignature() != chunkSignature)

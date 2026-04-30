@@ -91,7 +91,7 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                 if (Header.BakedShadowsOffset > 0 && Header.Flags.HasFlag(MCNKFlags.HasBakedShadows))
                 {
                     ms.Seek(Header.BakedShadowsOffset + headerAndSizeOffset, SeekOrigin.Begin);
-                    BakedShadows = br.ReadIFFChunk<MCSH>(false, false);
+                    BakedShadows = br.ReadIFFChunk<MCSH>(false, false, true, Header.BakedShadowsSize - 8);
                     Header.Flags |= MCNKFlags.HasBakedShadows;
                 }
 
@@ -99,7 +99,7 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                 if (Header.AlphaMapsOffset > 0)
                 {
                     ms.Seek(Header.AlphaMapsOffset + headerAndSizeOffset, SeekOrigin.Begin);
-                    AlphaMaps = br.ReadIFFChunk<MCAL>(false, false);
+                    AlphaMaps = br.ReadIFFChunk<MCAL>(false, false, true, Header.AlphaMapsSize - 8);
                 }
 
                 // Read MCSE

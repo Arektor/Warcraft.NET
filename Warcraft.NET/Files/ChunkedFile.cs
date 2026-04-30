@@ -63,7 +63,7 @@ namespace Warcraft.NET.Files
                                 .GetType()
                                 .GetExtensionMethod(Assembly.GetExecutingAssembly(), "ReadIFFChunk")
                                 .MakeGenericMethod(chunkProperty.PropertyType.GetElementType())
-                                .Invoke(null, new object[] { br, false, false, IsReverseSignature() });
+                                .Invoke(null, new object[] { br, false, false, IsReverseSignature(), 0u });
 
                                 chunks.SetValue(chunk, i);
                             }
@@ -76,7 +76,7 @@ namespace Warcraft.NET.Files
                             .GetType()
                             .GetExtensionMethod(Assembly.GetExecutingAssembly(), "ReadIFFChunk")
                             .MakeGenericMethod(chunkProperty.PropertyType)
-                            .Invoke(null, new object[] { br, false, true, IsReverseSignature() });
+                            .Invoke(null, new object[] { br, false, true, IsReverseSignature(), 0u });
 
                             chunkProperty.SetValue(this, chunk);
                         }
