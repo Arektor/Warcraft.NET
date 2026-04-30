@@ -18,6 +18,11 @@ namespace Warcraft.NET.Files.ADT.Terrain.MCNK.SubChunks
         public static readonly int PaddingLength = 13;
 
         /// <summary>
+        /// Holds wotlk padding data
+        /// </summary>
+        public static readonly byte[] DefaultPadding = new byte[] { 0, 112, 245, 18, 0, 8, 0, 0, 0, 84, 245, 18, 0 };
+
+        /// <summary>
         /// Holds the binary chunk signature.
         /// </summary>
         public const string Signature = "MCNR";

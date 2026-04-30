@@ -164,9 +164,9 @@ namespace Warcraft.NET.Files.ADT.Terrain.Wotlk
                     bw.WriteIFFChunk(VertexNormals);
 
                     if (padding != null)
-                    {
                         bw.Write(padding);
-                    }
+                    else
+                        bw.Write(MCNR.DefaultPadding);
                 }
 
                 // Write MCLY
